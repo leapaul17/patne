@@ -1,0 +1,156 @@
+// Textes de l'interface en français, kreyòl et anglais.
+// Le kreyòl est à faire relire par un·e locuteur·rice natif·ve.
+export type Lang = 'fr' | 'ht' | 'en'
+
+const fr = {
+  // navigation
+  tabToday: "Aujourd'hui", tabRituals: 'Rituels', tabGoals: 'Objectifs', tabMove: 'Bouger', tabHistory: 'Historique',
+  help: 'Aide', settings: 'Réglages', close: 'Fermer', save: 'Enregistrer', cancel: 'Annuler', add: 'Ajouter', delete: 'Supprimer',
+  // accueil
+  hello: 'Bonjour', goodEvening: 'Bonsoir', patIntro: "Je suis Pat, ton patnè. Touche-moi !",
+  checkinTitle: 'Comment tu te sens ?', checkinDone: 'Check-in fait, merci !', checkinEdit: 'Modifier',
+  mood: 'Humeur', energy: 'Énergie', sleep: 'Sommeil', hours: 'h', note: 'Un mot sur ta journée (facultatif)',
+  moods: ['Très bas', 'Bas', 'Stable', 'Bien', 'Très bien'],
+  energies: ['À plat', 'Faible', 'Moyenne', 'Bonne', 'Pleine'],
+  gratefulTitle: "3 choses qui m'ont fait du bien", gratefulPh: 'Une petite chose…',
+  affirmTitle: 'Pensée du jour', pawolTitle: 'Pawòl du jour', another: 'Une autre',
+  // rituels
+  ritualsTitle: 'Mes rituels du jour', ritualsHint: 'Coche ce que tu as fait. Même un seul, ça compte.',
+  ritualsAllDone: 'Tout est fait. Bravo !', newRitual: 'Nouveau rituel', streak: 'jours de suite',
+  defaultRituals: ["Boire un grand verre d'eau", 'Prendre un moment calme ou une prière', 'Sortir prendre l\'air', 'Appeler ou écrire à quelqu\'un', 'Me coucher à une heure régulière'],
+  // objectifs
+  goalsTitle: 'Mes objectifs', goalsEmpty: 'Pas encore d\'objectif. Commence par un tout petit.',
+  newGoal: 'Nouvel objectif', goalPh: 'Ex. : marcher 3 fois par semaine', stepPh: 'Un petit pas…', addStep: 'Ajouter un pas',
+  tipTitle: 'Astuce', done: 'Fait',
+  tips: [
+    ['Découpe en petits pas', "Note les pas un par un, puis fais le premier aujourd'hui, même s'il te prend cinq minutes."],
+    ['La mini-victoire d\'abord', 'Fais ton petit pas avant de réfléchir. Le mouvement crée l\'élan.'],
+    ['Tout en douceur', "Ne pas tout avoir en main n'est pas un défaut. Ça avance, une étape à la fois."],
+    ['Affiche-le', "Un objectif qu'on voit tous les jours a plus de chances d'avancer."],
+    ['Trouve un binôme', 'Donne des nouvelles de ton objectif à quelqu\'un chaque semaine.'],
+  ] as [string, string][],
+  // bouger
+  moveTitle: 'Bouger', moveWeek: 'Cette semaine', moveGoal: 'objectif : 150 min', minutes: 'min',
+  logActivity: 'Noter une activité', whichActivity: 'Quelle activité ?', howLong: 'Combien de temps ?',
+  activities: { walk: 'Marche', dance: 'Danse', garden: 'Jardin', house: 'Ménage', stretch: 'Étirements', bike: 'Vélo', swim: 'Nage', other: 'Autre' },
+  moveEmpty: 'Rien de noté cette semaine. Une petite marche de 10 minutes compte !',
+  moveCheer: ['Bravo, ton corps te remercie.', 'Chaque minute compte.', 'Belle énergie !'],
+  // historique
+  historyTitle: 'Historique', last14: 'Humeur des 14 derniers jours', noData: 'Pas encore de données.',
+  recentNotes: 'Derniers check-ins', checkins: 'check-ins', ritualsDone: 'rituels faits', minutesMoved: 'minutes de mouvement',
+  // aide
+  helpTitle: "Besoin d'aide ?", helpIntro: "Tu n'es pas seul·e. Si tu es en danger, appelle tout de suite.",
+  emergency: 'Urgences', mentalLine: 'Ligne santé mentale (24 h/24)', myPeople: 'Mes personnes de confiance',
+  addContact: 'Ajouter une personne', contactName: 'Nom', contactPhone: 'Téléphone', call: 'Appeler',
+  breathe: 'Respirer avec Pat', breatheIn: 'Inspire', breatheHold: 'Garde', breatheOut: 'Expire', start: 'Commencer', stop: 'Arrêter',
+  // réglages
+  language: 'Langue', yourName: 'Ton prénom', backup: 'Sauvegarde',
+  backupHint: "Tes données restent seulement sur ce téléphone. Fais une sauvegarde de temps en temps pour ne rien perdre.",
+  exportBtn: 'Télécharger une sauvegarde', importBtn: 'Restaurer une sauvegarde', importOk: 'Sauvegarde restaurée.', importErr: 'Fichier non reconnu.',
+  installTitle: "Mettre l'app sur l'écran d'accueil",
+  installAndroid: 'Android (Chrome) : menu ⋮ puis « Ajouter à l\'écran d\'accueil » ou « Installer l\'application ».',
+  installIos: 'iPhone (Safari) : bouton Partager puis « Sur l\'écran d\'accueil ».',
+  installBtn: 'Installer',
+  // accueil premier lancement
+  welcome: 'Bienvenue', welcomeText: "Patnè t'accompagne chaque jour : comment tu te sens, tes petits rituels, tes objectifs et ton mouvement.",
+  pickLang: 'Choisis ta langue', namePh: 'Ton prénom', letsGo: "C'est parti",
+  privacy: 'Tout reste sur ton téléphone. Personne d\'autre ne voit tes réponses.',
+}
+
+type Dict = typeof fr
+
+const ht: Dict = {
+  tabToday: 'Jodi a', tabRituals: 'Abitid', tabGoals: 'Objektif', tabMove: 'Bouje', tabHistory: 'Istwa',
+  help: 'Èd', settings: 'Paramèt', close: 'Fèmen', save: 'Anrejistre', cancel: 'Anile', add: 'Ajoute', delete: 'Efase',
+  hello: 'Bonjou', goodEvening: 'Bonswa', patIntro: 'Se mwen Pat, patnè w. Touche m !',
+  checkinTitle: 'Kijan ou santi w ?', checkinDone: 'Mèsi, ou fin ranpli l !', checkinEdit: 'Chanje',
+  mood: 'Moral', energy: 'Enèji', sleep: 'Dòmi', hours: 'è', note: 'Yon ti mo sou jounen w (si ou vle)',
+  moods: ['Ba anpil', 'Ba', 'Nòmal', 'Byen', 'Byen anpil'],
+  energies: ['Bouke nèt', 'Fèb', 'Mwayen', 'Bon', 'Plen'],
+  gratefulTitle: '3 bagay ki fè m byen', gratefulPh: 'Yon ti bagay…',
+  affirmTitle: 'Panse jodi a', pawolTitle: 'Pawòl jodi a', another: 'Yon lòt',
+  ritualsTitle: 'Abitid mwen jodi a', ritualsHint: 'Make sa ou fè. Menm youn sèl konte.',
+  ritualsAllDone: 'Ou fè tout. Bravo !', newRitual: 'Nouvo abitid', streak: 'jou youn dèyè lòt',
+  defaultRituals: ['Bwè yon gwo vè dlo', 'Pran yon ti moman kalm oswa yon priyè', 'Soti pran lè', 'Rele oswa ekri yon moun', 'Al dòmi a lè regilye'],
+  goalsTitle: 'Objektif mwen', goalsEmpty: 'Poko gen objektif. Kòmanse ak yon ti piti.',
+  newGoal: 'Nouvo objektif', goalPh: 'Egz. : mache 3 fwa pa semèn', stepPh: 'Yon ti pa…', addStep: 'Ajoute yon pa',
+  tipTitle: 'Konsèy', done: 'Fini',
+  tips: [
+    ['Koupe l an ti pa', 'Ekri pa yo youn pa youn, epi fè premye a jodi a, menm si se senk minit.'],
+    ['Ti viktwa a anvan', 'Fè ti pa w la anvan ou reflechi twòp. Mouvman an bay fòs.'],
+    ['Dousman dousman', 'Ou pa bezwen gen tout bagay nan men w. Piti piti zwazo fè nich li.'],
+    ['Mete l kote ou wè l', 'Yon objektif ou wè chak jou gen plis chans avanse.'],
+    ['Jwenn yon patnè', 'Bay yon moun nouvèl objektif ou chak semèn.'],
+  ],
+  moveTitle: 'Bouje', moveWeek: 'Semèn sa a', moveGoal: 'objektif : 150 min', minutes: 'min',
+  logActivity: 'Note yon aktivite', whichActivity: 'Ki aktivite ?', howLong: 'Konbyen tan ?',
+  activities: { walk: 'Mache', dance: 'Danse', garden: 'Jaden', house: 'Travay kay', stretch: 'Detire kò', bike: 'Bisiklèt', swim: 'Naje', other: 'Lòt' },
+  moveEmpty: 'Anyen poko note semèn sa a. Yon ti mache 10 minit konte !',
+  moveCheer: ['Bravo, kò w di w mèsi.', 'Chak minit konte.', 'Bèl enèji !'],
+  historyTitle: 'Istwa', last14: 'Moral 14 dènye jou yo', noData: 'Poko gen done.',
+  recentNotes: 'Dènye check-in yo', checkins: 'check-in', ritualsDone: 'abitid fèt', minutesMoved: 'minit mouvman',
+  helpTitle: 'Ou bezwen èd ?', helpIntro: 'Ou pa poukont ou. Si ou an danje, rele touswit.',
+  emergency: 'Ijans', mentalLine: 'Liy sante mantal (24 è sou 24)', myPeople: 'Moun mwen fè konfyans',
+  addContact: 'Ajoute yon moun', contactName: 'Non', contactPhone: 'Telefòn', call: 'Rele',
+  breathe: 'Respire ak Pat', breatheIn: 'Rale souf', breatheHold: 'Kenbe', breatheOut: 'Lage souf', start: 'Kòmanse', stop: 'Kanpe',
+  language: 'Lang', yourName: 'Non w', backup: 'Sove done yo',
+  backupHint: 'Done w yo rete sèlman sou telefòn sa a. Fè yon kopi detanzantan pou w pa pèdi anyen.',
+  exportBtn: 'Telechaje yon kopi', importBtn: 'Remete yon kopi', importOk: 'Kopi a remete.', importErr: 'Nou pa rekonèt fichye sa a.',
+  installTitle: 'Mete app la sou ekran an',
+  installAndroid: 'Android (Chrome) : meni ⋮ epi « Ajouter à l\'écran d\'accueil » oswa « Installer l\'application ».',
+  installIos: 'iPhone (Safari) : bouton Pataje epi « Sur l\'écran d\'accueil ».',
+  installBtn: 'Enstale',
+  welcome: 'Byenveni', welcomeText: 'Patnè la avè w chak jou : kijan ou santi w, ti abitid ou, objektif ou ak mouvman ou.',
+  pickLang: 'Chwazi lang ou', namePh: 'Non w', letsGo: 'Ann ale',
+  privacy: 'Tout bagay rete sou telefòn ou. Pèsonn pa wè repons ou.',
+}
+
+const en: Dict = {
+  tabToday: 'Today', tabRituals: 'Rituals', tabGoals: 'Goals', tabMove: 'Move', tabHistory: 'History',
+  help: 'Help', settings: 'Settings', close: 'Close', save: 'Save', cancel: 'Cancel', add: 'Add', delete: 'Delete',
+  hello: 'Good morning', goodEvening: 'Good evening', patIntro: "I'm Pat, your patnè. Tap me!",
+  checkinTitle: 'How are you feeling?', checkinDone: 'Check-in done, thank you!', checkinEdit: 'Edit',
+  mood: 'Mood', energy: 'Energy', sleep: 'Sleep', hours: 'h', note: 'A word about your day (optional)',
+  moods: ['Very low', 'Low', 'Steady', 'Good', 'Very good'],
+  energies: ['Drained', 'Low', 'Medium', 'Good', 'Full'],
+  gratefulTitle: '3 things that did me good', gratefulPh: 'A small thing…',
+  affirmTitle: 'Thought of the day', pawolTitle: 'Pawòl of the day', another: 'Another one',
+  ritualsTitle: "Today's rituals", ritualsHint: 'Tick what you did. Even one counts.',
+  ritualsAllDone: 'All done. Well done!', newRitual: 'New ritual', streak: 'days in a row',
+  defaultRituals: ['Drink a big glass of water', 'Take a quiet moment or a prayer', 'Go outside for some air', 'Call or text someone', 'Go to bed at a regular time'],
+  goalsTitle: 'My goals', goalsEmpty: 'No goals yet. Start with a tiny one.',
+  newGoal: 'New goal', goalPh: 'E.g. walk 3 times a week', stepPh: 'A small step…', addStep: 'Add a step',
+  tipTitle: 'Tip', done: 'Done',
+  tips: [
+    ['Break it into small steps', 'Write the steps one by one, then do the first today, even if it takes five minutes.'],
+    ['Small win first', 'Take your small step before overthinking. Movement creates momentum.'],
+    ['Gently does it', "Not having everything under control isn't a flaw. It moves forward one step at a time."],
+    ['Keep it visible', 'A goal you see every day is more likely to move forward.'],
+    ['Find a buddy', 'Give someone news about your goal every week.'],
+  ],
+  moveTitle: 'Move', moveWeek: 'This week', moveGoal: 'goal: 150 min', minutes: 'min',
+  logActivity: 'Log an activity', whichActivity: 'Which activity?', howLong: 'How long?',
+  activities: { walk: 'Walk', dance: 'Dance', garden: 'Garden', house: 'Housework', stretch: 'Stretching', bike: 'Bike', swim: 'Swim', other: 'Other' },
+  moveEmpty: 'Nothing logged this week. A 10-minute walk counts!',
+  moveCheer: ['Well done, your body thanks you.', 'Every minute counts.', 'Great energy!'],
+  historyTitle: 'History', last14: 'Mood over the last 14 days', noData: 'No data yet.',
+  recentNotes: 'Recent check-ins', checkins: 'check-ins', ritualsDone: 'rituals done', minutesMoved: 'minutes of movement',
+  helpTitle: 'Need help?', helpIntro: "You're not alone. If you're in danger, call right now.",
+  emergency: 'Emergency', mentalLine: 'Mental health line (24/7)', myPeople: 'People I trust',
+  addContact: 'Add a person', contactName: 'Name', contactPhone: 'Phone', call: 'Call',
+  breathe: 'Breathe with Pat', breatheIn: 'Breathe in', breatheHold: 'Hold', breatheOut: 'Breathe out', start: 'Start', stop: 'Stop',
+  language: 'Language', yourName: 'Your first name', backup: 'Backup',
+  backupHint: 'Your data stays only on this phone. Make a backup now and then so you never lose anything.',
+  exportBtn: 'Download a backup', importBtn: 'Restore a backup', importOk: 'Backup restored.', importErr: 'File not recognised.',
+  installTitle: 'Add the app to your home screen',
+  installAndroid: 'Android (Chrome): menu ⋮ then "Add to Home screen" or "Install app".',
+  installIos: 'iPhone (Safari): Share button then "Add to Home Screen".',
+  installBtn: 'Install',
+  welcome: 'Welcome', welcomeText: 'Patnè is with you every day: how you feel, your small rituals, your goals and your movement.',
+  pickLang: 'Choose your language', namePh: 'Your first name', letsGo: "Let's go",
+  privacy: 'Everything stays on your phone. Nobody else sees your answers.',
+}
+
+export const dicts: Record<Lang, Dict> = { fr, ht, en }
+export type T = Dict
+export const langNames: Record<Lang, string> = { ht: 'Kreyòl', fr: 'Français', en: 'English' }
