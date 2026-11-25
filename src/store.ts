@@ -30,9 +30,9 @@ export const dayKey = (d = new Date()) =>
 export const addDays = (d: Date, n: number) => { const c = new Date(d); c.setDate(c.getDate() + n); return c }
 
 function guessLang(): Lang {
-  if (variant === 'manman') return 'ht'
+  // Langue du téléphone si on la propose, sinon français.
   const l = (navigator.language || 'fr').slice(0, 2)
-  return l === 'en' ? 'en' : 'fr'
+  return (['fr', 'en', 'es', 'ht'] as Lang[]).includes(l as Lang) ? (l as Lang) : 'fr'
 }
 
 function fresh(): State {

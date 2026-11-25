@@ -1,6 +1,6 @@
 // Textes de l'interface en français, kreyòl et anglais.
 // Le kreyòl est à faire relire par un·e locuteur·rice natif·ve.
-export type Lang = 'fr' | 'ht' | 'en'
+export type Lang = 'fr' | 'ht' | 'en' | 'es'
 
 const fr = {
   // navigation
@@ -151,6 +151,52 @@ const en: Dict = {
   privacy: 'Everything stays on your phone. Nobody else sees your answers.',
 }
 
-export const dicts: Record<Lang, Dict> = { fr, ht, en }
+const es: Dict = {
+  tabToday: 'Hoy', tabRituals: 'Rituales', tabGoals: 'Metas', tabMove: 'Moverse', tabHistory: 'Historial',
+  help: 'Ayuda', settings: 'Ajustes', close: 'Cerrar', save: 'Guardar', cancel: 'Cancelar', add: 'Añadir', delete: 'Borrar',
+  hello: 'Buenos días', goodEvening: 'Buenas noches', patIntro: 'Soy Pat, tu patnè. ¡Tócame!',
+  checkinTitle: '¿Cómo te sientes?', checkinDone: '¡Listo, gracias!', checkinEdit: 'Cambiar',
+  mood: 'Ánimo', energy: 'Energía', sleep: 'Sueño', hours: 'h', note: 'Una palabra sobre tu día (opcional)',
+  moods: ['Muy bajo', 'Bajo', 'Estable', 'Bien', 'Muy bien'],
+  energies: ['Agotada', 'Baja', 'Media', 'Buena', 'Llena'],
+  gratefulTitle: '3 cosas que me hicieron bien', gratefulPh: 'Una cosita…',
+  affirmTitle: 'Pensamiento del día', pawolTitle: 'Pawòl del día', another: 'Otro',
+  ritualsTitle: 'Mis rituales de hoy', ritualsHint: 'Marca lo que hiciste. Aunque sea uno, cuenta.',
+  ritualsAllDone: '¡Todo hecho. Bravo!', newRitual: 'Nuevo ritual', streak: 'días seguidos',
+  defaultRituals: ['Tomar un vaso grande de agua', 'Tomar un momento de calma o una oración', 'Salir a tomar aire', 'Llamar o escribir a alguien', 'Acostarme a una hora regular'],
+  goalsTitle: 'Mis metas', goalsEmpty: 'Todavía no hay metas. Empieza con una pequeñita.',
+  newGoal: 'Nueva meta', goalPh: 'Ej.: caminar 3 veces por semana', stepPh: 'Un pasito…', addStep: 'Añadir un paso',
+  tipTitle: 'Consejo', done: 'Hecho',
+  tips: [
+    ['Divídela en pasos pequeños', 'Escribe los pasos uno por uno y haz el primero hoy, aunque solo tome cinco minutos.'],
+    ['Primero la pequeña victoria', 'Da tu pasito antes de pensarlo demasiado. El movimiento da impulso.'],
+    ['Poco a poco', 'No tener todo bajo control no es un defecto. Se avanza paso a paso.'],
+    ['Tenla a la vista', 'Una meta que ves todos los días tiene más chances de avanzar.'],
+    ['Busca un compañero', 'Cuéntale a alguien cada semana cómo va tu meta.'],
+  ],
+  moveTitle: 'Moverse', moveWeek: 'Esta semana', moveGoal: 'meta: 150 min', minutes: 'min',
+  logActivity: 'Anotar una actividad', whichActivity: '¿Qué actividad?', howLong: '¿Cuánto tiempo?',
+  activities: { walk: 'Caminar', dance: 'Bailar', garden: 'Jardín', house: 'Tareas de casa', stretch: 'Estiramientos', bike: 'Bicicleta', swim: 'Nadar', other: 'Otra' },
+  moveEmpty: 'Nada anotado esta semana. ¡Una caminata de 10 minutos cuenta!',
+  moveCheer: ['Bravo, tu cuerpo te lo agradece.', 'Cada minuto cuenta.', '¡Qué buena energía!'],
+  historyTitle: 'Historial', last14: 'Ánimo de los últimos 14 días', noData: 'Todavía no hay datos.',
+  recentNotes: 'Últimos registros', checkins: 'registros', ritualsDone: 'rituales hechos', minutesMoved: 'minutos de movimiento',
+  helpTitle: '¿Necesitas ayuda?', helpIntro: 'No estás sola. Si estás en peligro, llama ahora mismo.',
+  emergency: 'Emergencias', mentalLine: 'Línea de salud mental (24 h)', myPeople: 'Personas de confianza',
+  addContact: 'Añadir una persona', contactName: 'Nombre', contactPhone: 'Teléfono', call: 'Llamar',
+  breathe: 'Respirar con Pat', breatheIn: 'Inhala', breatheHold: 'Mantén', breatheOut: 'Exhala', start: 'Empezar', stop: 'Parar',
+  language: 'Idioma', yourName: 'Tu nombre', backup: 'Copia de seguridad',
+  backupHint: 'Tus datos se quedan solo en este teléfono. Haz una copia de vez en cuando para no perder nada.',
+  exportBtn: 'Descargar una copia', importBtn: 'Restaurar una copia', importOk: 'Copia restaurada.', importErr: 'Archivo no reconocido.',
+  installTitle: 'Poner la app en la pantalla de inicio',
+  installAndroid: 'Android (Chrome): menú ⋮ y luego «Añadir a pantalla de inicio» o «Instalar aplicación».',
+  installIos: 'iPhone (Safari): botón Compartir y luego «Agregar a inicio».',
+  installBtn: 'Instalar',
+  welcome: 'Bienvenida', welcomeText: 'Patnè te acompaña cada día: cómo te sientes, tus pequeños rituales, tus metas y tu movimiento.',
+  pickLang: 'Elige tu idioma', namePh: 'Tu nombre', letsGo: '¡Vamos!',
+  privacy: 'Todo se queda en tu teléfono. Nadie más ve tus respuestas.',
+}
+
+export const dicts: Record<Lang, Dict> = { fr, ht, en, es }
 export type T = Dict
-export const langNames: Record<Lang, string> = { ht: 'Kreyòl', fr: 'Français', en: 'English' }
+export const langNames: Record<Lang, string> = { fr: 'Français', es: 'Español', en: 'English', ht: 'Kreyòl' }
