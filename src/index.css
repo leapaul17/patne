@@ -214,3 +214,12 @@ p { margin: 0 0 6px; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
 }
+
+/* bandeau « ajoute à l'écran d'accueil » */
+.keep-banner { width: 100%; background: var(--amber); color: var(--on-pastel); border-radius: 20px; padding: 14px 16px; text-align: left; }
+.keep-banner.warn { background: #FFD0C9; }
+.keep-banner p { margin: 0 0 6px; font-weight: 600; }
+.keep-banner .small { font-weight: 400; }
+.keep-actions { display: flex; gap: 8px; align-items: center; }
+.keep-actions .btn-primary { width: auto; margin-top: 4px; background: var(--accent-fixed); color: #fff; min-height: 44px; }
+.keep-actions .btn-ghost { color: var(--on-pastel); text-decoration: underline; }

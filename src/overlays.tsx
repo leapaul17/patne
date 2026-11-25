@@ -135,12 +135,49 @@ function LangPicker({ onPick }: { onPick?: (l: Lang) => void }) {
   )
 }
 
+/* ───────── Bandeau « garder mes données » ───────── */
+
+const standalone = () =>
+  window.matchMedia('(display-mode: standalone)').matches || (navigator as unknown as { standalone?: boolean }).standalone === true
+// Navigateurs intégrés (WhatsApp, Instagram, Facebook…) : leur stockage est jetable.
+const inAppBrowser = () => /FBAN|FBAV|Instagram|WhatsApp|Line\/|Snapchat|musical_ly|TikTok|; wv\)/i.test(navigator.userAgent)
+
+export function KeepBanner() {
+  const t = useT()
+  const [hidden, setHidden] = useState(() => { try { return sessionStorage.getItem('patne.banner') === '1' } catch { return false } })
+  const [canInstall, setCanInstall] = useState(!!deferredInstall)
+  useEffect(() => {
+    const h = () => setCanInstall(true)
+    window.addEventListener('beforeinstallprompt', h)
+    return () => window.removeEventListener('beforeinstallprompt', h)
+  }, [])
+  if (standalone()) return null
+  const inApp = inAppBrowser()
+  if (hidden && !inApp) return null
+  const ios = /iPhone|iPad|iPod/.test(navigator.userAgent)
+  return (
+    <div className={`keep-banner ${inApp ? 'warn' : ''}`} role="status">
+      <p>{inApp ? t.bannerInApp : t.bannerInstall}</p>
+      {!inApp && <p className="small">{ios ? t.installIos : t.installAndroid}</p>}
+      <div className="keep-actions">
+        {!inApp && canInstall && (
+          <button className="btn-primary" onClick={async () => { await deferredInstall?.prompt(); deferredInstall = null; setCanInstall(false) }}>{t.installBtn}</button>
+        )}
+        {!inApp && (
+          <button className="btn-ghost" onClick={() => { try { sessionStorage.setItem('patne.banner', '1') } catch { /* ignore */ } setHidden(true) }}>{t.bannerHide}</button>
+        )}
+      </div>
+    </div>
+  )
+}
+
 /* ───────── Premier lancement ───────── */
 
 export function Onboarding() {
   const s = useStore(), t = useT()
   return (
     <main className="onboarding">
+      <KeepBanner />
       <Pat size={170} lang={s.lang} label={t.patIntro} />
       <h1>{t.welcome}</h1>
       <p className="lead">{t.welcomeText}</p>

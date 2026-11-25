@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Icon, useT } from './ui'
 import { useStore } from './store'
 import { Goals, History, Move, Rituals, Today } from './screens'
-import { Help, Onboarding, Settings } from './overlays'
+import { Help, KeepBanner, Onboarding, Settings } from './overlays'
+import { askPersistence } from './store'
 
 const TABS = [
   { id: 'today', icon: 'today', label: 'tabToday', View: Today },
@@ -18,6 +19,7 @@ export default function App() {
   const [sheet, setSheet] = useState<'help' | 'settings' | null>(null)
 
   useEffect(() => { document.documentElement.lang = s.lang }, [s.lang])
+  useEffect(() => { askPersistence() }, []) // demande au navigateur de ne pas effacer les données
   useEffect(() => { window.scrollTo(0, 0) }, [tab])
 
   if (!s.onboarded) return <Onboarding />
@@ -29,7 +31,7 @@ export default function App() {
         <button className="btn-help" onClick={() => setSheet('help')}><Icon name="help" size={20} /> {t.help}</button>
         <button className="btn-icon" onClick={() => setSheet('settings')} aria-label={t.settings}><Icon name="settings" /></button>
       </div>
-      <main className="page"><View /></main>
+      <main className="page"><KeepBanner /><View /></main>
       <nav className="tabbar" aria-label="Navigation">
         {TABS.map((x) => (
           <button key={x.id} className={tab === x.id ? 'on' : ''} onClick={() => setTab(x.id)} aria-current={tab === x.id ? 'page' : undefined}>
